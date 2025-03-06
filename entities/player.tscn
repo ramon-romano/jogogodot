@@ -1,0 +1,145 @@
+[gd_scene load_steps=22 format=3 uid="uid://d203133code4i"]
+
+[ext_resource type="Texture2D" uid="uid://dxhdaqhdasdwi" path="res://sprites/2 - Lil Wiz/Idle_(32 x 32).png" id="1_4bus7"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_hefjx"]
+[ext_resource type="Texture2D" uid="uid://bsluxy77j1ek2" path="res://sprites/2 - Lil Wiz/Falling_(32 x 32).png" id="2_qe582"]
+[ext_resource type="Texture2D" uid="uid://ivvjdk4lyden" path="res://sprites/2 - Lil Wiz/Running_(32 x 32).png" id="3_kft6w"]
+[ext_resource type="Texture2D" uid="uid://ci1uq3yug0elw" path="res://sprites/2 - Lil Wiz/Jumping_(32 x 32).png" id="3_yv44m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7xp2j"]
+radius = 11.0
+height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4x57"]
+atlas = ExtResource("2_qe582")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj8mx"]
+atlas = ExtResource("2_qe582")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab5qm"]
+atlas = ExtResource("1_4bus7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yqo1"]
+atlas = ExtResource("1_4bus7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6j47"]
+atlas = ExtResource("1_4bus7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k822h"]
+atlas = ExtResource("1_4bus7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhova"]
+atlas = ExtResource("1_4bus7")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40bii"]
+atlas = ExtResource("3_yv44m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf6h6"]
+atlas = ExtResource("3_kft6w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l6xw"]
+atlas = ExtResource("3_kft6w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t4qw"]
+atlas = ExtResource("3_kft6w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5j66"]
+atlas = ExtResource("3_kft6w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d72a5"]
+atlas = ExtResource("3_kft6w")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0al8x"]
+atlas = ExtResource("3_kft6w")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysx7x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4x57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj8mx")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab5qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yqo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6j47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k822h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhova")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40bii")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf6h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l6xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t4qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5j66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d72a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0al8x")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_hefjx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7xp2j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(1, 1.03125)
+sprite_frames = SubResource("SpriteFrames_ysx7x")
+animation = &"fall"
+autoplay = "idle"
