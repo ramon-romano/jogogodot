@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://d203133code4i"]
 
 [ext_resource type="Texture2D" uid="uid://dxhdaqhdasdwi" path="res://sprites/2 - Lil Wiz/Idle_(32 x 32).png" id="1_4bus7"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_hefjx"]
+[ext_resource type="Script" uid="uid://yaijusy7c5ny" path="res://scripts/player.gd" id="1_hefjx"]
 [ext_resource type="Texture2D" uid="uid://bsluxy77j1ek2" path="res://sprites/2 - Lil Wiz/Falling_(32 x 32).png" id="2_qe582"]
 [ext_resource type="Texture2D" uid="uid://ivvjdk4lyden" path="res://sprites/2 - Lil Wiz/Running_(32 x 32).png" id="3_kft6w"]
 [ext_resource type="Texture2D" uid="uid://ci1uq3yug0elw" path="res://sprites/2 - Lil Wiz/Jumping_(32 x 32).png" id="3_yv44m"]
