@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://cepbu5yk3if08"]
+
+[ext_resource type="Script" uid="uid://cbgwwwwbod4bs" path="res://scripts/game_over.gd" id="1_xeevv"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_xeevv")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -24.0
+offset_top = -20.0
+offset_right = 316.0
+offset_bottom = 229.0
+color = Color(0.649978, 0.708139, 0.971404, 1)
+
+[node name="TitleLabel" type="Label" parent="."]
+modulate = Color(0.168261, 0.433011, 0.842104, 1)
+offset_left = 1.0
+offset_top = 43.0
+offset_right = 289.0
+offset_bottom = 67.0
+text = "FIM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 28.0
+offset_top = 128.0
+offset_right = 129.0
+offset_bottom = 158.0
+text = "SAIR"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 147.0
+offset_top = 128.0
+offset_right = 252.0
+offset_bottom = 159.0
+text = "RECOMEÇAR
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
